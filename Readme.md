@@ -1,7 +1,7 @@
 # Личный проект «Техномарт»
 
 * Студент: [Мария Эчкенко](https://up.htmlacademy.ru/htmlcss/29/user/1526817).
-* Наставник: `Неизвестно`.
+* Наставник: [Ирина Малиновская](https://htmlacademy.ru/profile/irina-malinovskaya).
 
 ---
 

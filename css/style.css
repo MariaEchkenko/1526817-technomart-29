@@ -451,7 +451,7 @@ img{
 }
 
 /*about*/
-.about{
+.about .container{
     display: grid;
     grid-template-columns: 2fr 1fr;
     margin-bottom: 70px;

@@ -82,14 +82,11 @@ img{
 .header-link{
     background-color:var(--special-blue);
 }
-.header-link-bar{
+ .header-link .container{
     font-size: 18px;
     line-height: 24px;
     display: grid;
     grid-template-columns: min-content 1fr min-content min-content  max-content;
-    width: 940px;
-    margin: 0 auto;
-    padding: 0 10px;
 }
 .main-logo{
     background-color:var(--basic-red);
@@ -127,11 +124,11 @@ img{
     margin: 0 auto;
     padding: 0 10px; 
 }
-.main-header .container{
+/*.main-header .container{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap:20px; 
-}
+}*/
 
 .header-text{
     font-size: 16px;
@@ -538,6 +535,15 @@ img{
 }
 
 /*catalog*/
+.page-catalog{
+    display:grid;
+    grid-template-columns: 220px 1fr;
+}
+.breadcrumbs{
+    grid-column: 1/-1;
+    padding:20px 0;
+    margin: 0;
+}
 .breadcrumbs .link{
     font-family: PT Sans;
     font-size: 13px;
@@ -546,11 +552,39 @@ img{
     color: var(--black);
 }
 .page-title{
+    grid-column: 1/-1;
     font-size: 30px;
     line-height: 30px;
     color:var(--dark-blue);
     text-transform: uppercase; 
     background-color:var(--background-catalog-blue);
+    padding:30px;
+    margin: 0;
+    margin-bottom: 20px;
+}
+.catalog{
+    grid-column: 2/-1;
+    margin-bottom:48px;
+}
+.product-list{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap:20px;
+    padding:0;
+    margin: 0;
+    margin-left: 20px;
+}
+.sorting-list{
+    padding: 10px 0;
+    margin: 0;
+}
+.filtr-title{
+    margin:0;
+    padding: 10px; 18px;
+}
+.sorting{
+    margin-left: 20px;
+    margin-bottom: 28px;
 }
 .filtr-title,
 .sorting{
@@ -571,6 +605,13 @@ img{
     text-align: center;
     border: 1px solid var(--border-color-light);
 }
+.pagination-list{
+    grid-column: 2/-1;
+    padding: 0;
+    margin: 0;
+    margin-left: 20px;
+    margin-bottom:59px;
+}
 .pagination-list .link:hover{
     border: 1px solid var(--grey);
 }
@@ -585,8 +626,16 @@ img{
     font-size: 30px;
     line-height: 30px;
     text-transform: uppercase; 
+    padding: 0;
+    margin: 0;
+    padding-top: 64px;
+    padding-bottom: 25px;
 }
 .about-products-text{
+    font-family: PT Sans;
     font-size: 13px;
     line-height: 24px;
+    padding: 0;
+    margin: 0;
+    padding-bottom: 68px;
 }

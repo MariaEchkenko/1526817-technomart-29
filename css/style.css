@@ -18,6 +18,7 @@
     --active-blue:#161D29;
     --extra-light-grey:#F9F5F0;
     --grey:#C5C5C5;
+    --basic-grey:#3D546F;
     --light-grey:#A9A9A9;
     --light-yellow:#FFD180;
     --basic-yellow:#FFC047;
@@ -92,9 +93,7 @@ img{
     margin-bottom:46px;
 }
 .main-logo{
-    background-color:var(--basic-red);
-    box-shadow: inset 0px -5px 0px var(--shadow-red);  
-    min-height: 47px; 
+    background-color: var(--basic-red);
     width: 220px;
     display: flex;
     justify-content: center;
@@ -103,12 +102,23 @@ img{
 .main-logo:active{
     background-color:var(--extra-red);   
 }
+.header-logo{
+    height: 42px;
+}
+.header-logo::before{
+    position: absolute;
+    content:"";
+    height: 5px;
+    width: 220px;
+    background-color: var(--basic-red);
+    box-shadow: inset 0px -5px 0px var(--shadow-red);
+    top: 42px;
+}
 .header-top-link{
     display: block;
     padding: 9px 25px;
     text-decoration: none;
-    color: var(--white);
-    
+    color: var(--white);  
 }
 .header-top-link:active{
     background-color: var(--active-blue); 
@@ -153,6 +163,7 @@ img{
     margin: 0;
 }
 .button-phone{
+    position: relative;
     display: flex;
     width: 270px;
     height: 45px;
@@ -167,7 +178,20 @@ img{
     border: 3px solid var(--white);
     box-sizing:border-box;
 }
+.button-phone::before{
+    content: "";
+    position: absolute;
+    left: 39px;
+    width: 19px;
+    height: 19px;
+    background-image: url("../img/icon-phone.svg");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
 
+.check-in{
+    display: flex;
+}
 .user-button{
     display: block;
     text-decoration: none;
@@ -179,15 +203,34 @@ img{
     color: var(--black);
     background-color: var(--white);
 }
-.check-in{
-    display: flex;
-}
 .user-button:hover{
     color: var(--basic-red);
 }
 .user-button:active{
     color: var(--grey);
 } 
+
+.login{
+    position: relative;
+    padding-right: 27px;
+    padding-left: 45px;
+}
+.login::before{
+    content: "";
+    position: absolute;
+    left: 19px;
+    top: 12px;
+    width: 20px;
+    height: 17px;
+    background-image: url("../img/icon-login.svg");
+    background-repeat: no-repeat;
+    background-position: 0 0; 
+}
+/*.login:hover::before,
+.login:focus::before{
+    fill: var(--basic-grey);
+}*/
+
 .user-orders{
     display: flex;
     justify-content: center;
@@ -276,22 +319,41 @@ img{
     font-size: 24px;
     line-height: 30px;
     font-weight: bold;
+    margin: 0;
+    margin-top: 20px;
+    margin-bottom: 14px;
     margin-left: 22px;
 }
 .materials{
-    background-color:var(--dark-yellow);   
+    background-color:var(--dark-yellow);
+    background-image: url("../img/icon-1.svg");
+    background-repeat: no-repeat;
+    background-position: 213px 31px;
+
 }
 .instruments{
-    background-color:var(--light-blue)    
+    background-color:var(--light-blue); 
+    background-image: url("../img/icon-2.svg");
+    background-repeat: no-repeat;
+    background-position: 194px 34px;  
 }
 .technics{
-    background-color:var(--violet);   
+    background-color:var(--violet); 
+    background-image: url("../img/icon-3.svg");
+    background-repeat: no-repeat;
+    background-position: 191px 31px;   
 }
 .sales{
     background-color:var(--basic-green);
+    background-image: url("../img/icon-4.svg");
+    background-repeat: no-repeat;
+    background-position: 196px 27px;
 }
 .delivery{
-    background-color:var(--basic-yellow);   
+    background-color:var(--basic-yellow); 
+    background-image: url("../img/icon-5.svg");
+    background-repeat: no-repeat;
+    background-position: 191px 32px;  
 }
 .promo-button{
     text-decoration: none;
@@ -462,7 +524,7 @@ img{
     text-align: center;
     text-transform: uppercase;
     color: var(--light-grey);
-   /* margin-top:7px;
+    /*margin-top:7px;
     margin-bottom:13px;*/
 }
 .button-price{
@@ -519,6 +581,11 @@ img{
 .services .container{
     display: grid;
     grid-template-columns: 240px 1fr;
+    background-image: 
+        url("../img/delivery_img.png"),
+        url("../img/shadow_object.png");
+    background-repeat: no-repeat;
+    background-position: 470px 235px, 240px 189px;
 }
 .services-info{
     grid-column: 1/-1;
@@ -528,6 +595,7 @@ img{
     flex-direction: column;
     padding: 0;
     margin: 0;
+    margin-bottom: 99px;
 } 
 
 .services-title,
@@ -537,11 +605,22 @@ img{
     text-transform: uppercase;
     color: var(--black);
 }
+.services-title{
+    margin: 0;
+    margin-top:64px;
+    margin-bottom:25px;
+}
 .services-text,
 .about-text{
+    font-family: PT Sans;
     font-size: 13px;
     line-height: 24px;
     color: var(--black);
+}
+.services-text{
+    width: 400px;
+    margin: 0;
+    margin-bottom: 70px;
 }
 
 .slider-button{
@@ -555,7 +634,14 @@ img{
     font-size: 21px;
     line-height: 30px;
     background:var(--dark-blue);
-    box-shadow: 0px 1px 0px var(--special-blue), inset 0px 1px 0px var(--extra-blue);
+    box-shadow: 
+        0px 1px 0px var(--special-blue), 
+        inset 0px 1px 0px var(--extra-blue);
+}
+.slider-button-current{
+    background:var(--white);
+    box-shadow: 0px 1px 0px var(--white);
+    color: var(--dark-blue);
 }
 .slider-button:hover{
     background:var(--special-blue);
@@ -568,6 +654,9 @@ img{
     line-height: 30px;
     color:var(--dark-blue);
     text-transform: uppercase; 
+    margin: 0;
+    margin-bottom: 30px;
+
 }
 
 /*about*/
@@ -628,6 +717,7 @@ img{
 }
 .footer-logo{
     height: 68px;
+    box-shadow: inset 0px -5px 0px var(--shadow-red);
 }
 .footer-navigation{
     display: flex;
@@ -715,12 +805,9 @@ img{
 }
 
 /*catalog*/
-.page-catalog{
-    display:grid;
-    grid-template-columns: 220px 1fr;
-}
+
 .breadcrumbs{
-    grid-column: 1/-1;
+    /*grid-column: 1/-1;*/
     display: flex;
     padding: 20px 0;
     margin: 0;
@@ -740,7 +827,7 @@ img{
     text-decoration: none;
 }
 .page-title{
-    grid-column: 1/-1;
+   /* grid-column: 1/-1;*/
     font-size: 30px;
     line-height: 30px;
     color:var(--dark-blue);
@@ -750,10 +837,14 @@ img{
     margin: 0;
     margin-bottom: 20px;
 }
-.catalog{
+.page-catalog{
+    display:grid;
+    grid-template-columns: 220px 1fr;
+}
+/*.catalog{
     grid-column: 2/-1;
     margin-bottom:28px;
-}
+}*/
 .catalog-list{
     display: flex;
     flex-wrap: wrap;

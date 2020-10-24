@@ -56,13 +56,13 @@
 
      <nav class="main-navigation">
         <ul class="list-reset site-navigation">
-          <li> <a class="site-navigation-link" href="index.html">Главная</a></li>
-          <li> <a class="site-navigation-link" href="">Компания</a></li>
-          <li> <a class="site-navigation-link" href="catalog.html">Каталог</a></li>
-          <li> <a class="site-navigation-link" href="">Новости</a></li>
-          <li> <a class="site-navigation-link" href="">Спецпредложения</a></li>
-          <li> <a class="site-navigation-link" href="">Доставка</a></li>
-          <li> <a class="site-navigation-link" href="">Контакты</a></li>
+          <li class="site-navigation-item"> <a class="site-navigation-link" href="index.html">Главная</a></li>
+          <li class="site-navigation-item"> <a class="site-navigation-link" href="">Компания</a></li>
+          <li class="site-navigation-item"> <a class="site-navigation-link" href="catalog.html">Каталог</a></li>
+          <li class="site-navigation-item"> <a class="site-navigation-link" href="">Новости</a></li>
+          <li class="site-navigation-item"> <a class="site-navigation-link" href="">Спецпредложения</a></li>
+          <li class="site-navigation-item"> <a class="site-navigation-link" href="">Доставка</a></li>
+          <li class="site-navigation-item"> <a class="site-navigation-link" href="">Контакты</a></li>
        </ul>
      </nav>
    </header>
@@ -74,7 +74,7 @@
         <h2 class="visually-hidden">Промо-блок</h2>
 
          <ul class="list-reset promo-list">
-           <li class="promo-items materials">
+           <li class="promo-items materials new">
               <h3 class="promo-items-title">Материалы</h3>
               <a class="promo-button" href="">на любой вкус</a>
            </li>
@@ -98,7 +98,7 @@
                   <img class="slider-img" src="img/slider_img_1.jpg" width="620" height="266" alt="">
                   <a class="button-primary" href="catalog.html">Открыть каталог</a>
                 </li>
-                <li class="slider-items slide ">
+                <li class="slider-items slide">
                   <div class="text-container">
                     <h2 class="slider-title">Дрели</h2>
                     <p class="slider-text">Соседям на радость!</p>
@@ -110,6 +110,10 @@
               <div class="slider-controls">
                 <button type="button" aria-label="Вперед" class="next"></button>
                 <button type="button" aria-label="Назад" class="back"></button>
+              </div>
+              <div class="slider-radio-controls">
+                <button class="current" type="button" aria-label="Первый слайд"></button>
+                <button type="button" aria-label="Второй слайд"></button>
               </div>
             </div>
             
@@ -138,23 +142,22 @@
               <figure class="products-img">
                <img src="img/bosch_bfg_9000.jpg" width="184" height="164" alt="">
               </figure>
-              <!--<span class="flag">New</span>-->
               <div class="action">
-                <button class="action-button buy">Купить</button>
-                <button class="action-button bookmark">В закладки</button>
+                <button type="button" class="action-button buy">Купить</button>
+                <button type="button" class="action-button bookmark">В закладки</button>
               </div>
               <a class="products-link" href=""><h3 class="item-title">Перфоратор BOSCH BFG 9000</h3></a>
               <del class="del-price">32500 P.</del>
               <button class="button-price" type="button">25500 P.</button> 
             </li>
 
-            <li class="products-item">
+            <li class="products-item new">
               <figure class="products-img">
                <img src="img/bosch_bfg_3000.jpg" width="127" height="112" alt="">
               </figure>
               <div class="action">
-                <button class="action-button buy">Купить</button>
-                <button class="action-button bookmark">В закладки</button>
+                <button type="button" class="action-button buy">Купить</button>
+                <button type="button" class="action-button bookmark">В закладки</button>
               </div>
               <a class="products-link" href=""><h3 class="item-title">Перфоратор BOSCH BFG 3000</h3></a>
               <del class="del-price">22500 P.</del>
@@ -166,21 +169,21 @@
                <img src="img/bosch_bfg_6000.jpg" width="144" height="128" alt="">
               </figure>
               <div class="action">
-                <button class="action-button buy">Купить</button>
-                <button class="action-button bookmark">В закладки</button>
+                <button type="button" class="action-button buy">Купить</button>
+                <button type="button" class="action-button bookmark">В закладки</button>
               </div>
               <a class="products-link" href=""><h3 class="item-title">Перфоратор BOSCH BFG 6000</h3></a>
               <del class="del-price">30500 P.</del>
               <button class="button-price" type="button">25500 P.</button>
             </li>
 
-            <li class="products-item">
+            <li class="products-item new">
               <figure class="products-img">
                <img src="img/bosch_bfg_2000.jpg" width="127" height="112" alt="">
               </figure>
               <div class="action">
-                <button class="action-button buy">Купить</button>
-                <button class="action-button bookmark">В закладки</button>
+                <button type="button" class="action-button buy">Купить</button>
+                <button type="button" class="action-button bookmark">В закладки</button>
               </div>
               <a class="products-link" href=""><h3 class="item-title">Перфоратор BOSCH BFG 2000</h3></a>
               <button class="button-price" type="button">12500 P.</button>
@@ -295,9 +298,7 @@
               Вы можете забрать товар сами,<br>заехав в наш офис:
             </p>
             <a class="link cart-link" href="">
-              <p>
-                <img src="img/map.jpg" width="300" height="158" alt="Карта с адресом: Большая Конюшенная ул.,19">
-              </p>
+              <img src="img/map.jpg" width="300" height="158" alt="Карта с адресом: Большая Конюшенная ул.,19">
             </a>
             <a class="button-primary" href="">Заблудились? Напишите нам!</a>
           </div>
@@ -381,6 +382,16 @@
         </div>
      </div>
    </footer>
-
+   <section class="modal">
+     <h2>Как до нас добраться</h2>
+     <!--Здесь будет карта-->
+     <button type="button">Закрыть</button>
+   </section>
+   <section class="modal">
+    <h2>Форма обратной связи</h2>
+    <!--Здесь будет форма связи-->
+    <button type="button">Отправить</button>
+    <button type="button">Закрыть</button>
+  </section>
   </body>
 </html>

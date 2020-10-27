@@ -12,7 +12,7 @@
     --special-green: #5FBB2D;
     --shadow-green: #367315;
     --active-green: #518534;
-    --extra-dark-blue:#212A3A;
+    --extra-dark-blue: #212A3A;
     --dark-blue:#32425C;
     --special-blue:#293449;
     --extra-blue:#405069;
@@ -34,6 +34,8 @@
     --background-blue:#F3F7F9;
     --border-color: #EAEAEA;
     --border-color-light: #E5E5E5;
+    --popup-grey: #F4F4F4;
+    --check-grey: #B5B5B5;
     --opasity-black: rgba(0, 0, 0, 0.3);
     --background-exrta-grey:rgba(0, 0, 0, 0.25);
     --transparent-black:rgba(0, 0, 0, 0.0001);
@@ -296,6 +298,8 @@ img{
     padding: 0 17px 0 15px;
     margin-bottom: 6px;
     background-color: var(--white);
+    margin-left: -10px;
+    
 }
 .name{
     padding-right: 20px;
@@ -308,8 +312,8 @@ img{
 .logout{
     padding-top: 5px;
 }
-.user-login{
-    margin-left: -10px;
+.user{
+    text-decoration: none;
 }
 .user-orders{
     position: relative;
@@ -1063,7 +1067,7 @@ img{
 
 
 .author-info{
-    background:var(--special-extra-blue);
+    background:var(--special-blue);
     font-size: 16px;
     line-height: 18px; 
 }
@@ -1210,6 +1214,7 @@ img{
     border:none;
 }
 .filter-item-title{
+    position: relative;
     font-family: PT Sans;
     font-weight: bold;
     font-size: 17px;
@@ -1217,6 +1222,15 @@ img{
     text-transform: uppercase;
     color: var(--black);
 }
+.filter-item-title::before{
+    content: "";
+    position: absolute;
+    top: -16px;
+    width: 220px;
+    height: 1px;
+    background-color: var(--border-color-light);
+}
+/*Range*/
 .range-filter{
     width:220px;
     margin-top: 10px;
@@ -1292,6 +1306,121 @@ img{
     text-align: center;
 }
 
+
+/*Check*/
+
+.filter-list{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    margin-top: 23.5px;
+}
+.check-list{
+    margin-top: 17.5px;
+    margin-bottom: 46px;
+}
+.filter-option{
+    margin-bottom: 20px;
+    padding-left: 35px;
+    color: var(--black);
+    text-transform: uppercase;
+    font-family: PT Sans;
+    font-size: 15px;
+    line-height: 19px;
+}
+.filter-option label {
+    position: relative;
+    display: block;
+    cursor: pointer;
+    user-select: none;
+}
+.filter-input-checkbox + label::before {
+    content: "";
+    position: absolute;
+    left: -35px;
+    top: -2px;
+    width: 23px;
+    height: 23px;
+    background-image: url("../img/checkbox-off.svg");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+.filter-input-checkbox:checked +label::before{
+    content: "";
+    position: absolute;
+    left: -35px;
+    top: -2px;
+    width: 23px;
+    height: 23px;
+    background-image: url("../img/checked-border.svg");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+.filter-input-checkbox:checked + label::after{
+    content: "";
+    position: absolute;
+    left: -31px;
+    top: -1px;
+    width: 22px;
+    height: 17px;
+    background-image: url("../img/check.svg");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+.filter-input:checked + label{
+    color: var(--black);
+}
+.filter-input:disabled + label{
+    opacity: 0.4;
+}
+
+/*Radio*/
+
+.filter-input-radio + label::before{
+    content: "";
+    position: absolute;
+    left: -35px;
+    top: -3px;
+    width: 25px;
+    height: 25px;
+    border: 4px solid var(--grey);
+    border-radius: 50%;
+    box-sizing: border-box;
+}
+.filter-input-radio:checked + label::after{
+    content: "";
+    position: absolute;
+    left: -26.5px;
+    top: 4.5px;
+    width: 9px;
+    height: 9px;
+    background-color: var(--grey);
+    border-radius: 50%;
+}
+.filter-input-radio:hover + label::before{
+    border: 4px solid var(--check-grey);
+}
+.filter-input-radio:checked:hover + label::after{
+    background-color: var(--check-grey);
+}
+
+.filter-button{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    width: 220px;
+    height: 38px;
+    font-family: PT Sans;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 18px;
+    text-transform: uppercase;
+    color: var(--black);
+    background-color: var(--white);
+    border: 1px solid var(--border-color-light);
+    box-sizing: border-box;
+    margin-top: 18px;
+}
 /*sorting*/
 .sorting{
     position: relative;
@@ -1425,6 +1554,118 @@ img{
     padding-bottom: 68px;
 }
 /*Modal*/
+.modal{
+    /*display: none;*/
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    color: var(--black);
+    background-color:var(--white);
+    box-shadow: 0px 4px 20px var(--shadow-color-grey);
+    z-index: 25;
+}
+.modal::before{
+    content: "";
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 7px;
+    background-color: var(--basic-red);
+}
+.modal-close{
+    position: absolute;
+    top: 17px;
+    right: 11px;
+    width: 25px;
+    height: 25px;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+}
+.modal-close::before,
+.modal-close::after{
+    content: "";
+    position: absolute; 
+    top: 10px;
+    left: 2px;
+    width: 25px;
+    height: 3px;
+    background-color: var(--basic-red);
+}
+.modal-close::before {
+    transform: rotate(45deg);
+} 
+.modal-close::after {
+    transform: rotate(-45deg);
+}
+
+/*Modal-map*/
+.modal-map{
+    width:943px;
+    height: 449px;
+}
+.modal-map iframe{
+    border: none;
+}
+
+/*Modal-write*/
+.modal-write{
+    width: 620px;
+    height: 430px;
+}
+.modal-button{
+    background-color: var(--popup-grey);
+    padding-top: 37px;
+    padding-bottom: 37px;
+}
+.modal-write .button-primary{
+    margin: auto;
+    width: 460px;
+    border: none;
+}
+/*Modal-basket*/
+.modal-basket{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 620px;
+    height: 282px;
+}
+.modal-text{
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: bold;
+    padding-top: 7px;
+    margin: auto;
+}
+.modal-basket::after{
+    content: "";
+    position: absolute;
+    top: 55px;
+    left: 81px;
+    width: 66px;
+    height: 66px;
+    background-image: url("../img/icon-mark.svg");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+.modal-button{
+    display: flex;
+    justify-content: center;
+}
+.modal-button .button-primary{
+    width: 192px;
+    margin-right: 10px;
+}
+.next-buy{
+    color: var(--black);
+    background-color: var(--white);
+    margin-right: 0;
+}
 .modal{
     display: none;
 }

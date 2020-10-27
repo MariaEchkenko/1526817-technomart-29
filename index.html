@@ -298,7 +298,7 @@
               Вы можете забрать товар сами,<br>заехав в наш офис:
             </p>
             <a class="link cart-link" href="">
-              <img src="img/map.jpg" width="300" height="158" alt="Карта с адресом: Большая Конюшенная ул.,19">
+              <img src="img/map.jpg" width="300" height="158" alt="Офис компании по адресу ул. Большая Конюшенная 19/8, Санкт-Петербург">
             </a>
             <a class="button-primary" href="">Заблудились? Напишите нам!</a>
           </div>
@@ -382,16 +382,18 @@
         </div>
      </div>
    </footer>
-   <section class="modal">
-     <h2>Как до нас добраться</h2>
-     <!--Здесь будет карта-->
-     <button type="button">Закрыть</button>
+   <section class="modal modal-map">
+     <h2 class="visually-hidden">Как до нас добраться</h2>
+     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.6036253003151!2d30.32085871621117!3d59.9387191690541!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca145cc1%3A0x42b32648d8238007!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LzgsINCh0LDQvdC60YIt0J_QtdGC0LXRgNCx0YPRgNCzLCAxOTExODY!5e0!3m2!1sru!2sru!4v1603623523105!5m2!1sru!2sru" width="943" height="449"  allowfullscreen title="Офис компании по адресу ул. Большая Конюшенная 19/8, Санкт-Петербург" ></iframe>
+     <button class="modal-close" type="button" aria-label="Закрыть"></button>
    </section>
-   <section class="modal">
+   <section class="modal modal-write">
     <h2>Форма обратной связи</h2>
     <!--Здесь будет форма связи-->
-    <button type="button">Отправить</button>
-    <button type="button">Закрыть</button>
+    <div class="modal-write-button">
+      <button class="button-primary" type="button">Отправить</button>
+    </div>
+    <button class="modal-close" type="button" aria-label="Закрыть"></button>
   </section>
   </body>
 </html>

@@ -106,8 +106,8 @@ img{
     justify-content: center;
     align-items:center;
 }
-.main-logo:active{
-    background-color:var(--extra-red);   
+.header-logo:active{
+    background-color:var(--extra-red);  
 }
 .header-logo{
     height: 42px;
@@ -121,17 +121,41 @@ img{
     box-shadow: inset 0px -5px 0px var(--shadow-red);
     top: 42px;
 }
-.search{
+.input-wrapper{
     position: relative;
-    display: flex;
+    /*display: flex;*/
     width: 270px;
+    /*height: 42px;*/
+}
+.search{
+    width: 100%;
     height: 42px;
     padding-left: 42px;
     background-color:var(--special-blue);
-    color:var(--white);
+    color:var(--black);
     border: none; 
+    cursor: pointer;
 }
-
+.search::placeholder{
+    color: var(--white);
+}
+.search-icon{
+    position: absolute;
+    top: 12px;
+    right: 237px;
+    opacity: 0.3;
+}
+.search-icon:hover,
+.search:focus + .search-icon{
+    opacity: 1;
+}
+.search:focus{
+    background-color: var(--white);
+    outline: none;
+}
+.search:focus + .search-icon > path{
+    fill: var(--basic-red); 
+}
 .header-top-link{
     position: relative;
     display: flex;
@@ -150,7 +174,7 @@ img{
 .markers::before{
     content:"";
     position: absolute;
-    left:23px;
+    left:21px;
     top:12px;
     width:14px;
     height: 16px;
@@ -270,7 +294,7 @@ img{
     background-color: var(--white);
 }
 .user-button:hover,
-.user:hover .name{
+.user-orders-link:hover{
     color: var(--basic-red);
 }
 .user-button:hover path,
@@ -278,7 +302,8 @@ img{
     fill: var(--basic-grey);
 }
 .user-button:active,
-.user:active{
+.user:active .name,
+.user-orders-link:active{
     color: var(--grey);
 } 
 .user-button:active path,
@@ -308,6 +333,9 @@ img{
     font-size: 21px;
     line-height: 21px;
     color: var(--black);
+}
+.user svg{
+    padding-top: 5px;
 }
 .logout{
     padding-top: 5px;
@@ -371,9 +399,10 @@ img{
 .site-navigation{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
     margin: 0;
     padding: 0;
+    margin-left: 19px;
 }
 .site-navigation-item{
     margin-right: 6px;
@@ -859,11 +888,9 @@ img{
 .services .container{
     display: grid;
     grid-template-columns: 240px 1fr;
-    background-image: 
-        url("../img/delivery_img.png"),
-        url("../img/shadow_object.png");
+    background-image: url("../img/shadow_object.png");
     background-repeat: no-repeat;
-    background-position: 480px 255px, 240px 189px;
+    background-position: 240px 189px;
 }
 .services-info{
     grid-column: 1/-1;
@@ -925,8 +952,37 @@ img{
 .slider-button:hover{
     background:var(--special-blue);
 }
-.services-item-info{
+
+.services-slider-list{
+    list-style: none;
+    margin: 0;
+    padding: 0;
     margin-left: 80px;
+}
+.services-slider-item{
+    padding-bottom: 20px;
+}
+.slide-delivery{
+    background-image: url("../img/delivery_img.png");
+    background-repeat: no-repeat;
+    background-position: 151px 19px;
+}
+.slide-guarantee{
+    background-image: url("../img/guaranty_img.png");
+    background-repeat: no-repeat;
+    background-position: 239px -3px;
+}
+.slide-credit{
+    background-image: url("../img/credit_img.png");
+    background-repeat: no-repeat;
+    background-position: 165px 0;
+}
+.slide-credit > .button-primary{
+    width: 195px;
+    border-radius: 3px;
+}
+.slide-credit > .services-text{
+    margin-bottom: 23px;
 }
 .services-item-title{
     font-size: 30px;
@@ -936,7 +992,18 @@ img{
     text-transform: uppercase; 
     margin: 0;
     margin-bottom: 30px;
-
+}
+.slide-guarantee > .services-item-title{
+    margin-bottom: 22px;
+}
+.services-item-text{
+    width: 330px;
+}
+.services-slider-item{
+    display: none;
+}
+.services-slide-current{
+    display: block;
 }
 
 /*about*/
@@ -1292,7 +1359,7 @@ img{
     text-transform: uppercase;
 }
 .max-price::before{
-    content: "-";
+    content: " - ";
     position: absolute;
     left: 95px;
     top: 10px;
@@ -1367,6 +1434,15 @@ img{
     background-repeat: no-repeat;
     background-position: 0 0;
 }
+.filter-input-checkbox:hover + label::before {
+    background-image: url("../img/checkbox-off_hover.svg");
+}
+.filter-input-checkbox:checked:hover +label::before{
+    background-image: url("../img/checked-border_hover.svg");
+}
+.filter-input-checkbox:checked + label::after{
+    background-image: url("../img/check_hover.svg");
+}
 .filter-input:checked + label{
     color: var(--black);
 }
@@ -1390,8 +1466,8 @@ img{
 .filter-input-radio:checked + label::after{
     content: "";
     position: absolute;
-    left: -26.5px;
-    top: 4.5px;
+    left: -27px;
+    top: 5px;
     width: 9px;
     height: 9px;
     background-color: var(--grey);
@@ -1523,10 +1599,12 @@ img{
 .button-next{
     padding: 10px 31px;
 }
-.pagination-link:hover{
+.pagination-link:hover,
+.filter-button:hover{
     border: 1px solid var(--grey);
 }
-.pagination-link:active{
+.pagination-link:active,
+.filter-button:active{
     border: 1px solid var(--basic-red);
 }
 

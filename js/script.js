@@ -1,3 +1,34 @@
+let buyButton = document.querySelectorAll(".buy");
+const basketPopup = document.querySelector(".modal-basket");
+const basketClose = basketPopup.querySelector(".modal-close");
+const buttonContinue = basketPopup.querySelector(".next-buy");
+
+buyButton.forEach(function(button){
+    button.addEventListener("click", function (evt) {
+        evt.preventDefault();
+        basketPopup.classList.add("modal-show");
+    }); 
+});
+
+basketClose.addEventListener("click", function (evt) {
+    evt.preventDefault();
+    basketPopup.classList.remove("modal-show");
+});
+
+buttonContinue.addEventListener("click", function (evt) {
+    evt.preventDefault();
+    basketPopup.classList.remove("modal-show");
+});
+
+window.addEventListener("keydown", function (evt) {
+    if (evt.keyCode === 27) {
+      if (basketPopup.classList.contains("modal-show")) {
+        evt.preventDefault();
+        basketPopup.classList.remove("modal-show");
+      }
+    }
+});
+
 const mapLink = document.querySelector(".cart-link");
 const mapPopup = document.querySelector(".modal-map");
 const mapClose = mapPopup.querySelector(".modal-close");
@@ -9,9 +40,6 @@ const feedbackForm = feedbackPopup.querySelector(".feedback-form");
 const userName = feedbackPopup.querySelector(".user-info");
 const userMail = feedbackPopup.querySelector(".user-mail");
 
-const buyButton = document.querySelector(".buy");
-const basketPopup = document.querySelector(".modal-basket");
-const basketClose = basketPopup.querySelector(".modal-close");
 
 let isStorageSupport = true;
 let storage = "";
@@ -75,25 +103,6 @@ window.addEventListener("keydown", function (evt) {
         evt.preventDefault();
         feedbackPopup.classList.remove("modal-show");
         feedbackPopup.classList.remove("modal-error");
-      }
-    }
-});
-
-buyButton.addEventListener("click", function (evt) {
-    evt.preventDefault();
-    basketPopup.classList.add("modal-show");
-});
-
-basketClose.addEventListener("click", function (evt) {
-    evt.preventDefault();
-    basketPopup.classList.remove("modal-show");
-});
-
-window.addEventListener("keydown", function (evt) {
-    if (evt.keyCode === 27) {
-      if (basketPopup.classList.contains("modal-show")) {
-        evt.preventDefault();
-        basketPopup.classList.remove("modal-show");
       }
     }
 });

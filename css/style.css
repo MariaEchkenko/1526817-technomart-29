@@ -795,7 +795,6 @@ img{
     color: var(--white);
     background-color: var(--light-green);
     box-shadow: inset 0px -3px 0px var(--shadow-green);
-    tabindex: 0;
 }
 .buy::before{
     content: "";
@@ -834,8 +833,7 @@ img{
     display: none;
 }
 .products-item:hover .action,
-.products-item:focus-within .action
-{
+.products-item:focus-within .action{
     display: flex;
 }
 .products-item:hover{
@@ -1732,12 +1730,12 @@ li:first-child > .footer-list-link{
     border: none;
 }
 
-/*Modal-write*/
+/*Modal-feedback*/
 .modal-feedback{
     width: 620px;
     height: 430px;
 }
-.feedback-form{
+.form-container{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -1783,28 +1781,30 @@ li:first-child > .footer-list-link{
     box-sizing: border-box;
 }
 .modal-button{
-    background-color: var(--popup-grey);
     padding-top: 37px;
     padding-bottom: 37px;
+    background-color: var(--popup-grey);
 }
 .button-feedback{
-    margin-top: auto;
     min-width: 460px;
+    margin-top: auto;
     border: none;
 }
 /*Modal-basket*/
 .modal-basket{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
     width: 620px;
     height: 282px;
+}
+.basket-container{
+    display: flex;
+    flex-direction: column;
 }
 .modal-text{
     font-size: 24px;
     line-height: 30px;
     font-weight: bold;
-    padding-top: 7px;
+    padding-top: 73px;
+    padding-bottom: 67px;
     margin: auto;
 }
 .modal-basket::after{
@@ -1818,14 +1818,14 @@ li:first-child > .footer-list-link{
     background-repeat: no-repeat;
     background-position: 0 0;
 }
-.modal-button{
+.basket-button{
     display: flex;
     justify-content: center;
+    margin-top: auto;
 }
-/*.modal-button .button-primary{
+.basket-button a{
     width: 192px;
-    margin-right: 10px;
-}*/
+}
 .next-buy{
     color: var(--black);
     background-color: var(--white);
@@ -1838,3 +1838,54 @@ li:first-child > .footer-list-link{
 .modal{
     display: none;
 }
+
+.modal-show {
+    display: block;
+    animation: bounce 0.6s;
+}
+
+.modal-error {
+    animation: shake 0.6s;
+}
+
+/* Animations */
+
+@keyframes bounce {
+    0% {
+      transform: translateY(-2000px);
+    }
+  
+    70% {
+      transform: translateY(30px);
+    }
+  
+    90% {
+      transform: translateY(-10px);
+    }
+  
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes shake {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+  
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+      transform: translateX(-10px);
+    }
+  
+    20%,
+    40%,
+    60%,
+    80% {
+      transform: translateX(10px);
+    }
+  }

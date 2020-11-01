@@ -95,7 +95,7 @@
          <div class="wrapper">
            <div class="slider">
               <ul class="slider-list"> 
-                <li class="slider-items slide slide-current">
+                <li class="first-slide slide slide-current">
                   <div class="text-container">
                     <h2 class="slider-title">Перфораторы</h2>
                     <p class="slider-text">Настоящие мужские игрушки</p>
@@ -103,7 +103,7 @@
                   <img class="slider-img" src="img/slider_img_1.jpg" width="620" height="266" alt="Мужчина в строительной каске, наушниках и защитных очках с перфоратором в руках сверлит бетонную стену.">
                   <a class="button-primary" href="catalog.html">Открыть каталог</a>
                 </li>
-                <li class="slider-items slide">
+                <li class="second-slide slide">
                   <div class="text-container">
                     <h2 class="slider-title">Дрели</h2>
                     <p class="slider-text">Соседям на радость!</p>
@@ -113,12 +113,12 @@
                 </li>
               </ul> 
               <div class="slider-controls">
-                <button type="button" aria-label="Вперед" class="next"></button>
-                <button type="button" aria-label="Назад" class="back"></button>
+                <button class="next" type="button" aria-label="Вперед"></button>
+                <button class="back" type="button" aria-label="Назад"></button>
               </div>
               <div class="slider-radio-controls">
-                <button class="current" type="button" aria-label="Первый слайд"></button>
-                <button type="button" aria-label="Второй слайд"></button>
+                <button class="first-radio current" type="button" aria-label="Первый слайд"></button>
+                <button class="second-radio" type="button" aria-label="Второй слайд"></button>
               </div>
             </div>
             
@@ -260,13 +260,13 @@
           
           <ul class="list-reset services-list">
             <li class="services-item"> 
-              <a class="slider-button slider-button-current" href="">Доставка</a>
+              <a class="slider-button button-delivery slider-button-current" href="">Доставка</a>
             </li>
             <li class="services-item">
-              <a class="slider-button" href="">Гарантия</a>
+              <a class="slider-button button-guarantee" href="">Гарантия</a>
             </li>
             <li class="services-item">
-              <a class="slider-button" href="">Кредит</a>
+              <a class="slider-button button-credit" href="">Кредит</a>
             </li>
           </ul>
 
@@ -320,7 +320,7 @@
             <a class="link cart-link" href="">
               <img src="img/map.jpg" width="300" height="158" alt="Офис компании по адресу ул. Большая Конюшенная 19/8, Санкт-Петербург">
             </a>
-            <a class="button-primary" href="">Заблудились? Напишите нам!</a>
+            <a class="button-primary feedback-link" href="">Заблудились? Напишите нам!</a>
           </div>
         </div>
       </section>
@@ -402,37 +402,42 @@
         </div>
      </div>
    </footer>
+
    <section class="modal modal-map">
      <h2 class="visually-hidden">Как до нас добраться</h2>
      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.6036253003151!2d30.32085871621117!3d59.9387191690541!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca145cc1%3A0x42b32648d8238007!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LzgsINCh0LDQvdC60YIt0J_QtdGC0LXRgNCx0YPRgNCzLCAxOTExODY!5e0!3m2!1sru!2sru!4v1603623523105!5m2!1sru!2sru" width="943" height="449"  allowfullscreen title="Офис компании по адресу ул. Большая Конюшенная 19/8, Санкт-Петербург" ></iframe>
      <button class="modal-close" type="button" aria-label="Закрыть"></button>
    </section>
+
    <section class="modal modal-feedback">
     <h2 class="visually-hidden">Форма обратной связи</h2>
-      <form class="feedback-form" method="post">
-        <p class="feedback-item">
-          <label>Ваше имя:
-            <input type="text" placeholder="Имя Фамилия">
-          </label>
-        </p>
-        <p class="feedback-item">
-          <label>
-            Ваш e-mail:
-            <input type="email" placeholder="email@example.com">
-          </label>
-        </p> 
-        <p class="feedback-item">
-          <label>
-            Текст письма:
-            <textarea placeholder="В свободной форме"></textarea>
-          </label>
-        </p>
-        
+      <form class="feedback-form" action="https://echo.htmlacademy.ru" method="post">
+        <div class="form-container">
+          <p class="feedback-item">
+            <label>Ваше имя:
+              <input class="user-info" type="text" placeholder="Имя Фамилия">
+            </label>
+          </p>
+          <p class="feedback-item">
+            <label>
+              Ваш e-mail:
+              <input class="user-mail" type="email" placeholder="email@example.com">
+            </label>
+          </p> 
+          <p class="feedback-item">
+            <label>
+              Текст письма:
+              <textarea placeholder="В свободной форме"></textarea>
+            </label>
+          </p>
+        </div>
+        <div class="modal-button">
+        <button class="button-primary button-feedback" type="submit">Отправить</button>
+        </div>
       </form>
-    <div class="modal-button">
-      <button class="button-primary button-feedback" type="button">Отправить</button>
-    </div>
     <button class="modal-close" type="button" aria-label="Закрыть"></button>
   </section>
+
+  <script src="js/script.js"></script>
   </body>
 </html>

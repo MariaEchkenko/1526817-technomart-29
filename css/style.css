@@ -164,14 +164,14 @@ img{
     color: var(--white);
 }
 
-.form-search > label{
+.search-label{
     position: absolute;
     top: 12px;
     right: 237px;
     opacity: 0.3;
 }
 
-.form-search > label:hover,
+.form-search:hover  .search-label,
 .search:focus + .search-label{
     opacity: 1;
 }
@@ -181,7 +181,7 @@ img{
     outline: none;
 }
 
-.search:focus ~ .search-path{
+.form-search:focus-within .search-path{
     fill: var(--basic-red); 
 }
 

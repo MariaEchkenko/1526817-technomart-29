@@ -117,18 +117,18 @@ const radioSecond = document.querySelector(".second-radio");
 
 next.addEventListener("click", function (evt) {
   evt.preventDefault();
-  slideFirst.classList.remove("slide-current");
-  slideSecond.classList.add("slide-current");
-  radioFirst.classList.remove("current");
-  radioSecond.classList.add("current");
+  slideFirst.classList.toggle("slide-current");
+  slideSecond.classList.toggle("slide-current");
+  radioFirst.classList.toggle("current");
+  radioSecond.classList.toggle("current");
 });
 
 back.addEventListener("click", function (evt) {
   evt.preventDefault();
-  slideSecond.classList.remove("slide-current");
-  slideFirst.classList.add("slide-current");
-  radioSecond.classList.remove("current");
-  radioFirst.classList.add("current");
+  slideSecond.classList.toggle("slide-current");
+  slideFirst.classList.toggle("slide-current");
+  radioSecond.classList.toggle("current");
+  radioFirst.classList.toggle("current");
 });
 
 const deliveryLink = document.querySelector(".button-delivery");
